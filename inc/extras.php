@@ -30,3 +30,13 @@ function qod_admin_bar_render() {
     $wp_admin_bar->remove_menu('comments');
 }
 add_action( 'wp_before_admin_bar_render', 'qod_admin_bar_render' );
+
+/**
+ * Removes Comments-related metaboxes.
+ */
+ function qod_remove_comments_meta_boxes() {
+	remove_meta_box( 'commentstatusdiv', 'post', 'normal' );
+	remove_meta_box( 'commentsdiv', 'post', 'normal' );
+	remove_meta_box( 'trackbacksdiv', 'post', 'normal' );
+}
+add_action( 'admin_init', 'qod_remove_comments_meta_boxes' );
