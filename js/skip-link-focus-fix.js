@@ -6,9 +6,9 @@
  * Learn more: https://github.com/Automattic/_s/pull/136
  */
 (function() {
-  var isWebkit = navigator.userAgent.toLowerCase().indexOf('webkit') > -1,
-    isOpera = navigator.userAgent.toLowerCase().indexOf('opera') > -1,
-    isIE = navigator.userAgent.toLowerCase().indexOf('msie') > -1;
+  const isWebkit = navigator.userAgent.toLowerCase().indexOf('webkit') > -1;
+  const isOpera = navigator.userAgent.toLowerCase().indexOf('opera') > -1;
+  const isIE = navigator.userAgent.toLowerCase().indexOf('msie') > -1;
 
   if (
     (isWebkit || isOpera || isIE) &&
@@ -18,8 +18,9 @@
     window.addEventListener(
       'hashchange',
       function() {
-        var id = location.hash.substring(1),
-          element;
+        const id = location.hash.substring(1);
+        
+        let element;
 
         if (!/^[A-z0-9_-]+$/.test(id)) {
           return;
