@@ -18,8 +18,8 @@
     window.addEventListener(
       'hashchange',
       function() {
-        var id = location.hash.substring(1),
-          element;
+        const id = location.hash.substring(1);
+        let element;
 
         if (!/^[A-z0-9_-]+$/.test(id)) {
           return;
